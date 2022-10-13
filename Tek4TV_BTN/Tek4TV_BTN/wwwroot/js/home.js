@@ -13,3 +13,18 @@ var swiper = new Swiper(".mySwiper", {
       prevEl: ".swiper-button-prev",
     },
   });
+  // scroll-top
+const scrollBtnn = document.querySelector(".btn-scroll-top");
+const btnnVisibility = () => {
+if (window.scrollY > 400) {
+    scrollBtnn.style.visibility = "visible";
+} else {
+    scrollBtnn.style.visibility = "hidden";
+}
+};
+document.addEventListener("scroll", () => {
+btnnVisibility();
+});
+scrollBtnn.addEventListener("click", (e) => {e.preventDefault();
+  window.scroll(0,0);
+  });

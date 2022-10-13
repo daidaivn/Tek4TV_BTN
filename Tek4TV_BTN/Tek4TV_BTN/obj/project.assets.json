@@ -9427,19 +9427,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\dongh\\.nuget\\packages\\": {}
+    "C:\\Users\\User\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Tek4TV\\Tek4TV_BTN\\Tek4TV_BTN\\Tek4TV_BTN.csproj",
+      "projectUniqueName": "C:\\TEK4TV\\Projects\\Tek4TV_BTN\\Tek4TV_BTN\\Tek4TV_BTN\\Tek4TV_BTN.csproj",
       "projectName": "Tek4TV_BTN",
-      "projectPath": "C:\\Tek4TV\\Tek4TV_BTN\\Tek4TV_BTN\\Tek4TV_BTN.csproj",
-      "packagesPath": "C:\\Users\\dongh\\.nuget\\packages\\",
-      "outputPath": "C:\\Tek4TV\\Tek4TV_BTN\\Tek4TV_BTN\\obj\\",
+      "projectPath": "C:\\TEK4TV\\Projects\\Tek4TV_BTN\\Tek4TV_BTN\\Tek4TV_BTN\\Tek4TV_BTN.csproj",
+      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+      "outputPath": "C:\\TEK4TV\\Projects\\Tek4TV_BTN\\Tek4TV_BTN\\Tek4TV_BTN\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\dongh\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -9505,7 +9505,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
       }
     }
   },
