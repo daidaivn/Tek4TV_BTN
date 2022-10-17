@@ -23,126 +23,243 @@
 <div class="main-section container d-flex my-4 px-0">
     <div class="col-3 pe-3">
         <div class="left-main-section-top">
-            <div class="aspect-16-9">
-                <a href="#">
+            @{
+
+                <div class="aspect-16-9">
+                    @{
+                        var slug = "";
+                    }
+                    @foreach (var url in ViewBag.Headline[1].Metadata)
+                    {
+                        if (url.Name == "Slug")
+                        {
+                            slug = url.Value;
+                        }
+                    }
                     <a href="#">
-                        <img class="aspect-content boxshadow" src="../img/Rectangle 52.png" alt="">
+                        @foreach (var img in ViewBag.Headline[1].Image)
+                        {
+                            if (img.Type == "Thumbnail")
+                            {
+                                string url = @img.Url;
+                                string src = url.StartsWith("http") ? url : img.Cdn + img.Url;
+                                <img class="aspect-content boxshadow" src="@src" alt="" />
+                            }
+                        }
                     </a>
-                </a>
-            </div>
-            <div>
-                <h2 class="text-capitalize my-2 d-inline">
-                    <a href="#">Media</a>
-                </h2>
-            </div>
-            <div>
-                <h3 class="text-capitalize py-2 my-0">
-                    <a href="#" class="text-orange-hover">Video được xem nhiều nhất trên YouTube có bao nhiêu tỷ lượt xem?</a>
-                </h3>
-            </div>
-            <div class="auther">
-                <h3 class="my-0">
-                    <a href="#">Tác giả: Nguyễn Văn A</a>
-                </h3>
-            </div>
+                </div>
+                <div>
+                    <h2 class="text-capitalize my-2 d-inline">
+                        <a href="#">
+                            @foreach (var url in ViewBag.Headline[1].Metadata)
+                            {
+                                if (url.Name == "DVBCategories")
+                                {
+                                    @url.Value
+                                }
+                            }
+                        </a>
+                    </h2>
+                </div>
+                <div>
+                    <h3 class="text-capitalize py-2 my-0">
+                        <a href="#" class="text-orange-hover">@ViewBag.Headline[1].Title</a>
+                    </h3>
+                </div>
+                <div class="auther">
+                    <h3 class="my-0">
+                        <a href="#">Tác giả: Nguyễn Văn A</a>
+                    </h3>
+                </div>
+            }
         </div>
         <div class="left-main-section-bottom">
-            <div class="aspect-16-9">
-                <a href="#">
+            @{
+
+                <div class="aspect-16-9">
+                    @foreach (var url in ViewBag.Headline[2].Metadata)
+                    {
+                        if (url.Name == "Slug")
+                        {
+                            slug = url.Value;
+                        }
+                    }
                     <a href="#">
-                        <img class="aspect-content boxshadow" src="../img/Rectangle 52.png" alt="">
+                        @foreach (var img in ViewBag.Headline[2].Image)
+                        {
+                            if (img.Type == "Thumbnail")
+                            {
+                                string url = @img.Url;
+                                string src = url.StartsWith("http") ? url : img.Cdn + img.Url;
+                                <img class="aspect-content boxshadow" src="@src" alt="" />
+                            }
+                        }
                     </a>
-                </a>
-            </div>
-            <div>
-                <h2 class="text-capitalize my-2 d-inline">
-                    <a href="#">Media</a>
-                </h2>
-            </div>
-            <div>
-                <h3 class="text-capitalize py-2 my-0">
-                    <a href="#" class="text-orange-hover">Video được xem nhiều nhất trên YouTube có bao nhiêu tỷ lượt xem?</a>
-                </h3>
-            </div>
-            <div class="auther">
-                <h3 class="my-0">
-                    <a href="#">Tác giả: Nguyễn Văn A</a>
-                </h3>
-            </div>
+                </div>
+                <div>
+                    <h2 class="text-capitalize my-2 d-inline">
+                        <a href="#">
+                            @foreach (var url in ViewBag.Headline[2].Metadata)
+                            {
+                                if (url.Name == "DVBCategories")
+                                {
+                                    @url.Value
+                                }
+                            }
+                        </a>
+                    </h2>
+                </div>
+                <div>
+                    <h3 class="text-capitalize py-2 my-0">
+                        <a href="#" class="text-orange-hover">@ViewBag.Headline[2].Title</a>
+                    </h3>
+                </div>
+                <div class="auther">
+                    <h3 class="my-0">
+                        <a href="#">Tác giả: Nguyễn Văn A</a>
+                    </h3>
+                </div>
+            }
         </div>
     </div>
     <div class="col-6 px-3 x-line-nomal">
-        <div class="midder-main-section">
-            <div class="aspect-1-1">
-                <a href="#">
+        @{
+            <div class="midder-main-section">
+                <div class="aspect-1-1">
+                    @foreach (var url in ViewBag.Headline[0].Metadata)
+                    {
+                        if (url.Name == "Slug")
+                        {
+                            slug = url.Value;
+                        }
+                    }
                     <a href="#">
-                        <img class="aspect-content boxshadow" src="../img/Rectangle 52 (1).png" alt="">
+                        @foreach (var img in ViewBag.Headline[0].Image)
+                        {
+                            if (img.Type == "Thumbnail")
+                            {
+                                string url = @img.Url;
+                                string src = url.StartsWith("http") ? url : img.Cdn + img.Url;
+                                <img class="aspect-content boxshadow" src="@src" alt="" />
+                            }
+                        }
                     </a>
-                </a>
+                </div>
+                <div class="py-2 mt-2">
+                    <h2 class="text-capitalize">
+                        <a href="#">
+                            @foreach (var url in ViewBag.Headline[0].Metadata)
+                            {
+                                if (url.Name == "DVBCategories")
+                                {
+                                    @url.Value
+                                }
+                            }
+                        </a>
+
+                    </h2>
+                </div>
+                <div class="title-midder">
+                    <h3 class="py-2 my-0 mb-2">
+                        <a href="#" class="text-orange-hover">@ViewBag.Headline[0].Title</a>
+                    </h3>
+                </div>
+                <div class="auther">
+                    <h3 class="my-0">
+                        <a href="#">Tác giả: Nguyễn Văn A</a>
+                    </h3>
+                </div>
             </div>
-            <div class="py-2 mt-2">
-                <h2 class="text-capitalize">Media</h2>
-            </div>
-            <div class="title-midder">
-                <h3 class="py-2 my-0 mb-2">
-                    <a href="#" class="text-orange-hover">Chân dung nhà vô địch Đường lên đỉnh Olympia lần thứ 22</a>
-                </h3>
-            </div>
-            <div class="auther">
-                <h3 class="my-0">
-                    <a href="#">Tác giả: Nguyễn Văn A</a>
-                </h3>
-            </div>
-        </div>
+        }
     </div>
     <div class="col-3 ps-3">
-        <div class="right-main-section-top">
-            <div class="aspect-16-9">
-                <a href="#">
-                    <a href="#">
-                        <img class="aspect-content boxshadow" src="../img/Rectangle 52.png" alt="">
+        <div class="left-main-section-top">
+            @{
+                <div class="aspect-16-9">
+                    @foreach (var url in ViewBag.Headline[3].Metadata)
+                    {
+                        if (url.Name == "Slug")
+                        {
+                            slug = url.Value;
+                        }
+                    }
+                    <a href="~/chi-tiet/@slug">
+                        @foreach (var img in ViewBag.Headline[3].Image)
+                        {
+                            if (img.Type == "Thumbnail")
+                            {
+                                string url = @img.Url;
+                                string src = url.StartsWith("http") ? url : img.Cdn + img.Url;
+                                <img class="aspect-content boxshadow" src="@src" alt="">
+                            }
+                        }
                     </a>
-                </a>
-            </div>
-            <div>
-                <h2 class="text-capitalize my-2 d-inline">
-                    <a href="#">Media</a>
-                </h2>
-            </div>
-            <div>
-                <h3 class="text-capitalize py-2 my-0">
-                    <a href="#" class="text-orange-hover">Video được xem nhiều nhất trên YouTube có bao nhiêu tỷ lượt xem?</a>
-                </h3>
-            </div>
-            <div class="auther">
-                <h3 class="my-0">
-                    <a href="#">Tác giả: Nguyễn Văn A</a>
-                </h3>
-            </div>
+                </div>
+                <div>
+                    @foreach (var url in ViewBag.Headline[3].Metadata)
+                    {
+                        if (url.Name == "DVBCategories")
+                        {
+                            <h2 class="text-capitalize my-2 d-inline">
+                                <a href="#">@url.Value</a>
+                            </h2>
+                        }
+                    }
+                </div>
+                <div>
+                    <h3 class="text-capitalize py-2 my-0">
+                        <a href="~/chi-tiet/@slug" class="text-orange-hover">@ViewBag.Headline[3].Title</a>
+                    </h3>
+                </div>
+                <div class="auther">
+                    <h3 class="my-0">
+                        <a href="#">Tác giả: Chưa có tác giả </a>
+                    </h3>
+                </div>
+            }
         </div>
         <div class="right-main-section-bottom">
-            <div class="aspect-16-9">
-                <a href="#">
-                    <a href="#">
-                        <img class="aspect-content boxshadow" src="../img/Rectangle 52.png" alt="">
+            @{
+                <div class="aspect-16-9">
+                    @foreach (var url in ViewBag.Headline[4].Metadata)
+                    {
+                        if (url.Name == "Slug")
+                        {
+                            slug = url.Value;
+                        }
+                    }
+                    <a href="~/chi-tiet/@slug">
+                        @foreach (var img in ViewBag.Headline[4].Image)
+                        {
+                            string url = @img.Url;
+                            string src = url.StartsWith("http") ? url : img.Cdn + img.Url;
+                            <img class="aspect-content boxshadow" src="@src" alt="">
+                        }
                     </a>
-                </a>
-            </div>
-            <div>
-                <h2 class="text-capitalize my-2 d-inline">
-                    <a href="#">Media</a>
-                </h2>
-            </div>
-            <div>
-                <h3 class="text-capitalize py-2 my-0">
-                    <a href="#" class="text-orange-hover">Video được xem nhiều nhất trên YouTube có bao nhiêu tỷ lượt xem?</a>
-                </h3>
-            </div>
-            <div class="auther">
-                <h3 class="my-0">
-                    <a href="#">Tác giả: Nguyễn Văn A</a>
-                </h3>
-            </div>
+                </div>
+                <div>
+                    @foreach (var url in ViewBag.Headline[4].Metadata)
+                    {
+                        if (url.Name == "DVBCategories")
+                        {
+                            <h2 class="text-capitalize my-2 d-inline">
+                                <a href="#">@url.Value</a>
+                            </h2>
+                        }
+
+                    }
+                </div>
+                <div>
+                    <h3 class="text-capitalize py-2 my-0">
+                        <a href="~/chi-tiet/@slug" class="text-orange-hover">@ViewBag.Headline[4].Title</a>
+                    </h3>
+                </div>
+                <div class="auther">
+                    <h3 class="my-0">
+                        <a href="#">Tác giả: Chưa có tác giả </a>
+                    </h3>
+                </div>
+            }
         </div>
     </div>
 </div>
@@ -157,86 +274,50 @@
             <section class="full-blee">
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper content">
-                        <div class="swiper-slide card">
-                            <div class="card-img aspect-16-9 h-100">
-                                <a href="#">
-                                    <a href="#">
-                                        <img class="aspect-content boxshadow" src="../img/image 5.png" alt="#">
-                                    </a>
-                                </a>
-                            </div>
-                            <div class="card-category my-2 ">
-                                <p class="text-capitalize mb-0">Media</p>
-                            </div>
-                            <div class="card-heading">
-                                <h2 class="text-capitalize">
-                                    <a href="#">ca khuc mo man sea game 20</a>
-                                </h2>
-                            </div>
-                            <div class="post-time">
-                                <p class="mb-0">07/09/2022</p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide card">
-                            <div class="card-img aspect-16-9 h-100">
-                                <a href="#">
-                                    <a href="#">
-                                        <img class="aspect-content boxshadow" src="../img/image 5.png" alt="#">
-                                    </a>
-                                </a>
-                            </div>
-                            <div class="card-category my-2 ">
-                                <p class="text-capitalize mb-0">Media</p>
-                            </div>
-                            <div class="card-heading">
-                                <h2 class="text-capitalize">
-                                    <a href="#">Hành trình 10 năm nôí biển ca khuc mo man sea game 20</a>
-                                </h2>
-                            </div>
-                            <div class="post-time">
-                                <p class="mb-0">07/09/2022</p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide card">
-                            <div class="card-img aspect-16-9 h-100">
-                                <a href="#">
-                                    <a href="#">
-                                        <img class="aspect-content boxshadow" src="../img/image 5.png" alt="#">
-                                    </a>
-                                </a>
-                            </div>
-                            <div class="card-category my-2 ">
-                                <p class="text-capitalize mb-0">Media</p>
-                            </div>
-                            <div class="card-heading">
-                                <h2 class="text-capitalize">
-                                    <a href="#">Hành trình 10 năm nôí biển ca khuc mo man sea game 20</a>
-                                </h2>
-                            </div>
-                            <div class="post-time">
-                                <p class="mb-0">07/09/2022</p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide card">
-                            <div class="card-img aspect-16-9 h-100">
-                                <a href="#">
-                                    <a href="#">
-                                        <img class="aspect-content boxshadow" src="../img/image 5.png" alt="#">
-                                    </a>
-                                </a>
-                            </div>
-                            <div class="card-category my-2 ">
-                                <p class="text-capitalize mb-0">Media</p>
-                            </div>
-                            <div class="card-heading">
-                                <h2 class="text-capitalize">
-                                    <a href="#"> Hành trình 10 năm nôí biển ca khuc mo man sea game 20</a>
-                                </h2>
-                            </div>
-                            <div class="post-time">
-                                <p class="mb-0">07/09/2022</p>
-                            </div>
-                        </div>
+                        @{
+                            @for (var i = 0; i <= 3; i++)
+                            {
+                                <div class="swiper-slide card">
+                                    <div class="card-img aspect-16-9 h-100">
+                                        @foreach (var url in ViewBag.Headline[i].Metadata)
+                                        {
+                                            if (url.Name == "Slug")
+                                            {
+                                                slug = url.Value;
+                                            }
+                                        }
+                                        <a href="~/chi-tiet/@slug">
+                                            @foreach (var img in ViewBag.Headline[i].Image)
+                                            {
+                                                string url = @img.Url;
+                                                string src = url.StartsWith("http") ? url : img.Cdn + img.Url;
+                                                <img class="aspect-content boxshadow" src="@src" alt="#">
+                                            }
+                                        </a>
+                                    </div>
+                                    <div class="card-category my-2 ">
+                                        @foreach (var url in ViewBag.Headline[i].Metadata)
+                                        {
+                                            if (url.Name == "DVBCategories")
+                                            {
+                                                <p class="text-capitalize mb-0">@url.Value</p>
+                                            }
+
+                                        }
+
+                                    </div>
+                                    <div class="card-heading">
+                                        <h2 class="text-capitalize">
+                                            <a href="#">@ViewBag.Headline[i].Title</a>
+                                        </h2>
+                                    </div>
+                                    <div class="post-time">
+                                        <p class="mb-0">07/09/2022 (chưa có)</p>
+                                    </div>
+                                </div>
+                            }
+                        }
+
                     </div>
                 </div>
                 <div class="swiper-button-next"></div>
@@ -260,118 +341,77 @@
 <!-- first -->
 <div class="container d-flex px-0 my-3">
     <div class="col-10 pe-3">
-        <div class="header-first-section d-flex">
-            <div class="contents">
-                <h2>
-                    <a class="text-capitalize" href="#">media</a>
-                </h2>
-            </div>
-            <div class="contents-right d-flex ms-auto">
-                <a href="#" class="d-flex">
-                    <p class="text-capitalize my-0 me-2">xem thêm</p>
-                    <i class="fa-solid fa-angles-right"></i>
-                </a>
-            </div>
-        </div>
-        <div class="box-section d-flex py-3 bottom-line-nomal">
-            <div class="col-4 me-3">
-                <div class="aspect-16-9">
-                    <a href="#">
-                        <img class="aspect-content boxshadow" src="../img/image 5.png" alt="">
+        @{
+            <div class="header-first-section d-flex">
+                <div class="contents">
+                    <h2>
+                        <a class="text-capitalize" href="/chuyen-muc/@ViewBag.Home[0].PrivateKey">@ViewBag.Home[0].Title</a>
+                    </h2>
+                </div>
+                <div class="contents-right d-flex ms-auto">
+                    <a href="#" class="d-flex">
+                        <p class="text-capitalize my-0 me-2">xem thêm</p>
+                        <i class="fa-solid fa-angles-right"></i>
                     </a>
                 </div>
             </div>
-            <div class="col-8 ms-3">
-                <div class="calendar ms-3">07/09/2022</div>
-                <div class="title">
-                    <h3>
-                        <a href="#" class="text-orange-hover">Vinh danh 'Trạng nguyên nhỏ tuổi' và trao thưởng cuộc thi Viết chữ đẹp </a>
-                    </h3>
-                </div>
-                <div class="content">
-                    <p class="two-line mb-0">Vòng Chung kết đã thực sự trở thành Ngày hội tưng bừng với những màn đua tài thật hấp dẫn và đáng nhớ của các bạn thí sinh Tiểu học và THCS đến từ 19 tỉnh, thành phố trong cả nước và thủ đô Hà Nội...</p>
-                </div>
-                <div class="auther d-flex mt-5">
-                    <h3 class="my-0">
-                        <a href="#">Tác giả: Nguyễn Văn A</a>
-                    </h3>
-                    <div class="icon-social-networks ms-auto d-flex align-items-center">
-                        <a href="#">
-                            <i class="fa-brands fa-facebook-f mx-1 py-2 icon-fb"></i>
-                        </a>
-                        <a href="#">
-                            <i class="fa-brands fa-twitter mx-1 py-2 icon-twitter"></i>
-                        </a>
+        }
+
+        @{
+            @for (var i = 0; i <= 2; i++)
+            {
+
+                <div class="box-section d-flex py-3 bottom-line-nomal">
+                    <div class="col-4 me-3">
+                        <div class="aspect-16-9">
+                            @foreach (var url in ViewBag.Headline[i].Metadata)
+                            {
+                                if (url.Name == "Slug")
+                                {
+                                    slug = url.Value;
+                                }
+                            }
+                            <a href="~/chi-tiet/@slug">
+                                @foreach (var img in ViewBag.Home[0].Media[i].Image)
+                                {
+                                    if (img.Type == "Thumbnail")
+                                    {
+                                        string url = @img.Url;
+                                        string src = url.StartsWith("http") ? url : img.Cdn + img.Url;
+                                        <img class="aspect-content boxshadow" src="@src" alt="">
+                                    }
+                                }
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-8 ms-3">
+                        <div class="calendar ms-3">07/09/2022(chưa có)</div>
+                        <div class="title">
+                            <h3>
+                                <a href="#" class="text-orange-hover">@ViewBag.Home[0].Media[i].Title</a>
+                            </h3>
+                        </div>
+                        <div class="content">
+                            <p class="two-line mb-0">@ViewBag.Home[0].Media[i].Description</p>
+                        </div>
+                        <div class="auther d-flex mt-5">
+                            <h3 class="my-0">
+                                <a href="#">Tác giả: Chưa có tác giả</a>
+                            </h3>
+                            <div class="icon-social-networks ms-auto d-flex align-items-center">
+                                <a href="#">
+                                    <i class="fa-brands fa-facebook-f mx-1 py-2 icon-fb"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa-brands fa-twitter mx-1 py-2 icon-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="box-section d-flex py-3 bottom-line-nomal">
-            <div class="col-4 me-3">
-                <div class="aspect-16-9">
-                    <a href="#">
-                        <img class="aspect-content boxshadow" src="../img/image 5.png" alt="">
-                    </a>
-                </div>
-            </div>
-            <div class="col-8 ms-3">
-                <div class="calendar ms-3">07/09/2022</div>
-                <div class="title">
-                    <h3>
-                        <a href="#" class="text-orange-hover">Vinh danh 'Trạng nguyên nhỏ tuổi' và trao thưởng cuộc thi Viết chữ đẹp </a>
-                    </h3>
-                </div>
-                <div class="content">
-                    <p class="two-line mb-0">Vòng Chung kết đã thực sự trở thành Ngày hội tưng bừng với những màn đua tài thật hấp dẫn và đáng nhớ của các bạn thí sinh Tiểu học và THCS đến từ 19 tỉnh, thành phố trong cả nước và thủ đô Hà Nội...</p>
-                </div>
-                <div class="auther d-flex mt-5">
-                    <h3 class="my-0">
-                        <a href="#">Tác giả: Nguyễn Văn A</a>
-                    </h3>
-                    <div class="icon-social-networks ms-auto d-flex align-items-center">
-                        <a href="#">
-                            <i class="fa-brands fa-facebook-f mx-1 py-2 icon-fb"></i>
-                        </a>
-                        <a href="#">
-                            <i class="fa-brands fa-twitter mx-1 py-2 icon-twitter"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="box-section d-flex py-3">
-            <div class="col-4 me-3">
-                <div class="aspect-16-9">
-                    <a href="#">
-                        <img class="aspect-content boxshadow" src="../img/image 5.png" alt="">
-                    </a>
-                </div>
-            </div>
-            <div class="col-8 ms-3">
-                <div class="calendar ms-3">07/09/2022</div>
-                <div class="title">
-                    <h3>
-                        <a href="#" class="text-orange-hover">Vinh danh 'Trạng nguyên nhỏ tuổi' và trao thưởng cuộc thi Viết chữ đẹp </a>
-                    </h3>
-                </div>
-                <div class="content">
-                    <p class="two-line mb-0">Vòng Chung kết đã thực sự trở thành Ngày hội tưng bừng với những màn đua tài thật hấp dẫn và đáng nhớ của các bạn thí sinh Tiểu học và THCS đến từ 19 tỉnh, thành phố trong cả nước và thủ đô Hà Nội...</p>
-                </div>
-                <div class="auther d-flex mt-5">
-                    <h3 class="my-0">
-                        <a href="#">Tác giả: Nguyễn Văn A</a>
-                    </h3>
-                    <div class="icon-social-networks ms-auto d-flex align-items-center">
-                        <a href="#">
-                            <i class="fa-brands fa-facebook-f mx-1 py-2 icon-fb"></i>
-                        </a>
-                        <a href="#">
-                            <i class="fa-brands fa-twitter mx-1 py-2 icon-twitter"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+            }
+        }
+
     </div>
     <div class="col-2 ps-3">
         <div class="vertical-banner h-100">
@@ -389,118 +429,78 @@
 </div>
 <div class="container d-flex px-0 my-3">
     <div class="col-10 pe-3">
-        <div class="header-first-section d-flex">
-            <div class="contents">
-                <h2>
-                    <a class="text-capitalize" href="#">fun clip</a>
-                </h2>
-            </div>
-            <div class="contents-right d-flex ms-auto">
-                <a href="#" class="d-flex">
-                    <p class="text-capitalize my-0 me-2">xem thêm</p>
-                    <i class="fa-solid fa-angles-right"></i>
-                </a>
-            </div>
-        </div>
-        <div class="box-section d-flex py-3 bottom-line-nomal">
-            <div class="col-4 me-3">
-                <div class="aspect-16-9">
-                    <a href="#">
-                        <img class="aspect-content boxshadow" src="../img/image 5.png" alt="">
+        @{
+            <div class="header-first-section d-flex">
+                <div class="contents">
+                    <h2>
+                        <a class="text-capitalize" href="/chuyen-muc/@ViewBag.Home[1].PrivateKey">@ViewBag.Home[1].Title</a>
+                    </h2>
+                </div>
+                <div class="contents-right d-flex ms-auto">
+                    <a href="#" class="d-flex">
+                        <p class="text-capitalize my-0 me-2">xem thêm</p>
+                        <i class="fa-solid fa-angles-right"></i>
                     </a>
                 </div>
             </div>
-            <div class="col-8 ms-3">
-                <div class="calendar ms-3">07/09/2022</div>
-                <div class="title">
-                    <h3>
-                        <a href="#" class="text-orange-hover">Vinh danh 'Trạng nguyên nhỏ tuổi' và trao thưởng cuộc thi Viết chữ đẹp </a>
-                    </h3>
-                </div>
-                <div class="content">
-                    <p class="two-line mb-0">Vòng Chung kết đã thực sự trở thành Ngày hội tưng bừng với những màn đua tài thật hấp dẫn và đáng nhớ của các bạn thí sinh Tiểu học và THCS đến từ 19 tỉnh, thành phố trong cả nước và thủ đô Hà Nội...</p>
-                </div>
-                <div class="auther d-flex mt-5">
-                    <h3 class="my-0">
-                        <a href="#">Tác giả: Nguyễn Văn A</a>
-                    </h3>
-                    <div class="icon-social-networks ms-auto d-flex align-items-center">
-                        <a href="#">
-                            <i class="fa-brands fa-facebook-f mx-1 py-2 icon-fb"></i>
-                        </a>
-                        <a href="#">
-                            <i class="fa-brands fa-twitter mx-1 py-2 icon-twitter"></i>
-                        </a>
+        }
+        @{
+            @for (var i = 3; i <= 5; i++)
+            {
+
+                <div class="box-section d-flex py-3 bottom-line-nomal">
+                    <div class="col-4 me-3">
+                        <div class="aspect-16-9">
+                            @foreach (var url in ViewBag.Headline[i].Metadata)
+                            {
+                                if (url.Name == "Slug")
+                                {
+                                    slug = url.Value;
+                                }
+                            }
+                            <a href="~/chi-tiet/@slug">
+                                @foreach (var img in ViewBag.Home[1].Media[i].Image)
+                                {
+                                    if (img.Type == "Thumbnail")
+                                    {
+                                        string url = @img.Url;
+                                        string src = url.StartsWith("http") ? url : img.Cdn + img.Url;
+                                        <img class="aspect-content boxshadow" src="@src" alt="">
+                                    }
+                                }
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-8 ms-3">
+                        <div class="calendar ms-3">07/09/2022(chưa có)</div>
+                        <div class="title">
+                            <h3>
+                                <a href="#" class="text-orange-hover">@ViewBag.Home[1].Media[i].Title</a>
+                            </h3>
+                        </div>
+                        <div class="content">
+                            <p class="two-line mb-0">@ViewBag.Home[1].Media[i].Description</p>
+                        </div>
+                        <div class="auther d-flex mt-5">
+                            <h3 class="my-0">
+                                <a href="#">Tác giả: Chưa có tác giả</a>
+                            </h3>
+                            <div class="icon-social-networks ms-auto d-flex align-items-center">
+                                <a href="#">
+                                    <i class="fa-brands fa-facebook-f mx-1 py-2 icon-fb"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa-brands fa-twitter mx-1 py-2 icon-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="box-section d-flex py-3 bottom-line-nomal">
-            <div class="col-4 me-3">
-                <div class="aspect-16-9">
-                    <a href="#">
-                        <img class="aspect-content boxshadow" src="../img/image 5.png" alt="">
-                    </a>
-                </div>
-            </div>
-            <div class="col-8 ms-3">
-                <div class="calendar ms-3">07/09/2022</div>
-                <div class="title">
-                    <h3>
-                        <a href="#" class="text-orange-hover">Vinh danh 'Trạng nguyên nhỏ tuổi' và trao thưởng cuộc thi Viết chữ đẹp </a>
-                    </h3>
-                </div>
-                <div class="content">
-                    <p class="two-line mb-0">Vòng Chung kết đã thực sự trở thành Ngày hội tưng bừng với những màn đua tài thật hấp dẫn và đáng nhớ của các bạn thí sinh Tiểu học và THCS đến từ 19 tỉnh, thành phố trong cả nước và thủ đô Hà Nội...</p>
-                </div>
-                <div class="auther d-flex mt-5">
-                    <h3 class="my-0">
-                        <a href="#">Tác giả: Nguyễn Văn A</a>
-                    </h3>
-                    <div class="icon-social-networks ms-auto d-flex align-items-center">
-                        <a href="#">
-                            <i class="fa-brands fa-facebook-f mx-1 py-2 icon-fb"></i>
-                        </a>
-                        <a href="#">
-                            <i class="fa-brands fa-twitter mx-1 py-2 icon-twitter"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="box-section d-flex py-3">
-            <div class="col-4 me-3">
-                <div class="aspect-16-9">
-                    <a href="#">
-                        <img class="aspect-content boxshadow" src="../img/image 5.png" alt="">
-                    </a>
-                </div>
-            </div>
-            <div class="col-8 ms-3">
-                <div class="calendar ms-3">07/09/2022</div>
-                <div class="title">
-                    <h3>
-                        <a href="#" class="text-orange-hover">Vinh danh 'Trạng nguyên nhỏ tuổi' và trao thưởng cuộc thi Viết chữ đẹp </a>
-                    </h3>
-                </div>
-                <div class="content">
-                    <p class="two-line mb-0">Vòng Chung kết đã thực sự trở thành Ngày hội tưng bừng với những màn đua tài thật hấp dẫn và đáng nhớ của các bạn thí sinh Tiểu học và THCS đến từ 19 tỉnh, thành phố trong cả nước và thủ đô Hà Nội...</p>
-                </div>
-                <div class="auther d-flex mt-5">
-                    <h3 class="my-0">
-                        <a href="#">Tác giả: Nguyễn Văn A</a>
-                    </h3>
-                    <div class="icon-social-networks ms-auto d-flex align-items-center">
-                        <a href="#">
-                            <i class="fa-brands fa-facebook-f mx-1 py-2 icon-fb"></i>
-                        </a>
-                        <a href="#">
-                            <i class="fa-brands fa-twitter mx-1 py-2 icon-twitter"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+            }
+
+        }
+
+
     </div>
     <div class="col-2 ps-3">
         <div class="vertical-banner h-100">
@@ -519,117 +519,76 @@
 <div class="container d-flex px-0 my-3">
     <div class="col-10 pe-3">
         <div class="header-first-section d-flex">
-            <div class="contents">
-                <h2>
-                    <a class="text-capitalize" href="#">video</a>
-                </h2>
-            </div>
-            <div class="contents-right d-flex ms-auto">
-                <a href="#" class="d-flex">
-                    <p class="text-capitalize my-0 me-2">xem thêm</p>
-                    <i class="fa-solid fa-angles-right"></i>
-                </a>
-            </div>
-        </div>
-        <div class="box-section d-flex py-3 bottom-line-nomal">
-            <div class="col-4 me-3">
-                <div class="aspect-16-9">
-                    <a href="#">
-                        <img class="aspect-content boxshadow" src="../img/image 5.png" alt="">
+            @{
+                <div class="contents">
+                    <h2>
+                        <a class="text-capitalize" href="/chuyen-muc/@ViewBag.Home[2].PrivateKey">@ViewBag.Home[2].Title</a>
+                    </h2>
+                </div>
+                <div class="contents-right d-flex ms-auto">
+                    <a href="#" class="d-flex">
+                        <p class="text-capitalize my-0 me-2">xem thêm</p>
+                        <i class="fa-solid fa-angles-right"></i>
                     </a>
                 </div>
-            </div>
-            <div class="col-8 ms-3">
-                <div class="calendar ms-3">07/09/2022</div>
-                <div class="title">
-                    <h3>
-                        <a href="#" class="text-orange-hover">Vinh danh 'Trạng nguyên nhỏ tuổi' và trao thưởng cuộc thi Viết chữ đẹp </a>
-                    </h3>
-                </div>
-                <div class="content">
-                    <p class="two-line mb-0">Vòng Chung kết đã thực sự trở thành Ngày hội tưng bừng với những màn đua tài thật hấp dẫn và đáng nhớ của các bạn thí sinh Tiểu học và THCS đến từ 19 tỉnh, thành phố trong cả nước và thủ đô Hà Nội...</p>
-                </div>
-                <div class="auther d-flex mt-5">
-                    <h3 class="my-0">
-                        <a href="#">Tác giả: Nguyễn Văn A</a>
-                    </h3>
-                    <div class="icon-social-networks ms-auto d-flex align-items-center">
-                        <a href="#">
-                            <i class="fa-brands fa-facebook-f mx-1 py-2 icon-fb"></i>
-                        </a>
-                        <a href="#">
-                            <i class="fa-brands fa-twitter mx-1 py-2 icon-twitter"></i>
-                        </a>
+            }
+        </div>
+        @{
+            @for (var i = 5; i <= 7; i++)
+            {
+                <div class="box-section d-flex py-3 bottom-line-nomal">
+                    <div class="col-4 me-3">
+                        <div class="aspect-16-9">
+                            @foreach (var url in ViewBag.Headline[i].Metadata)
+                            {
+                                if (url.Name == "Slug")
+                                {
+                                    slug = url.Value;
+                                }
+                            }
+                            <a href="~/chi-tiet/@slug">
+                                @foreach (var img in ViewBag.Home[2].Media[i].Image)
+                                {
+                                    if (img.Type == "Thumbnail")
+                                    {
+                                        string url = @img.Url;
+                                        string src = url.StartsWith("http") ? url : img.Cdn + img.Url;
+                                        <img class="aspect-content boxshadow" src="@src" alt="">
+                                    }
+                                }
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-8 ms-3">
+                        <div class="calendar ms-3">07/09/2022(chưa có)</div>
+                        <div class="title">
+                            <h3>
+                                <a href="#" class="text-orange-hover">@ViewBag.Home[2].Media[i].Title</a>
+                            </h3>
+                        </div>
+                        <div class="content">
+                            <p class="two-line mb-0">@ViewBag.Home[2].Media[i].Description</p>
+                        </div>
+                        <div class="auther d-flex mt-5">
+                            <h3 class="my-0">
+                                <a href="#">Tác giả: Chưa có tác giả</a>
+                            </h3>
+                            <div class="icon-social-networks ms-auto d-flex align-items-center">
+                                <a href="#">
+                                    <i class="fa-brands fa-facebook-f mx-1 py-2 icon-fb"></i>
+                                </a>
+                                <a href="#">
+                                    <i class="fa-brands fa-twitter mx-1 py-2 icon-twitter"></i>
+                                </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="box-section d-flex py-3 bottom-line-nomal">
-            <div class="col-4 me-3">
-                <div class="aspect-16-9">
-                    <a href="#">
-                        <img class="aspect-content boxshadow" src="../img/image 5.png" alt="">
-                    </a>
-                </div>
-            </div>
-            <div class="col-8 ms-3">
-                <div class="calendar ms-3">07/09/2022</div>
-                <div class="title">
-                    <h3>
-                        <a href="#" class="text-orange-hover">Vinh danh 'Trạng nguyên nhỏ tuổi' và trao thưởng cuộc thi Viết chữ đẹp </a>
-                    </h3>
-                </div>
-                <div class="content">
-                    <p class="two-line mb-0">Vòng Chung kết đã thực sự trở thành Ngày hội tưng bừng với những màn đua tài thật hấp dẫn và đáng nhớ của các bạn thí sinh Tiểu học và THCS đến từ 19 tỉnh, thành phố trong cả nước và thủ đô Hà Nội...</p>
-                </div>
-                <div class="auther d-flex mt-5">
-                    <h3 class="my-0">
-                        <a href="#">Tác giả: Nguyễn Văn A</a>
-                    </h3>
-                    <div class="icon-social-networks ms-auto d-flex align-items-center">
-                        <a href="#">
-                            <i class="fa-brands fa-facebook-f mx-1 py-2 icon-fb"></i>
-                        </a>
-                        <a href="#">
-                            <i class="fa-brands fa-twitter mx-1 py-2 icon-twitter"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="box-section d-flex py-3">
-            <div class="col-4 me-3">
-                <div class="aspect-16-9">
-                    <a href="#">
-                        <img class="aspect-content boxshadow" src="../img/image 5.png" alt="">
-                    </a>
-                </div>
-            </div>
-            <div class="col-8 ms-3">
-                <div class="calendar ms-3">07/09/2022</div>
-                <div class="title">
-                    <h3>
-                        <a href="#" class="text-orange-hover">Vinh danh 'Trạng nguyên nhỏ tuổi' và trao thưởng cuộc thi Viết chữ đẹp </a>
-                    </h3>
-                </div>
-                <div class="content">
-                    <p class="two-line mb-0">Vòng Chung kết đã thực sự trở thành Ngày hội tưng bừng với những màn đua tài thật hấp dẫn và đáng nhớ của các bạn thí sinh Tiểu học và THCS đến từ 19 tỉnh, thành phố trong cả nước và thủ đô Hà Nội...</p>
-                </div>
-                <div class="auther d-flex mt-5">
-                    <h3 class="my-0">
-                        <a href="#">Tác giả: Nguyễn Văn A</a>
-                    </h3>
-                    <div class="icon-social-networks ms-auto d-flex align-items-center">
-                        <a href="#">
-                            <i class="fa-brands fa-facebook-f mx-1 py-2 icon-fb"></i>
-                        </a>
-                        <a href="#">
-                            <i class="fa-brands fa-twitter mx-1 py-2 icon-twitter"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
+            }
+
+        }
+
+
     </div>
     <div class="col-2 ps-3">
         <div class="vertical-banner h-100">

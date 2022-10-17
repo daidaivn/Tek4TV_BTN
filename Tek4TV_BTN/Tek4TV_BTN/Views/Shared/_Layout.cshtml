@@ -78,19 +78,19 @@
                 <div class="col-6 d-flex ps-3 ms-3">
                     <ul class="d-flex my-0 px-0">
                         <li class="nav-item">
-                            <a class="nav-link active text-capitalize px-5 text-red-hover active" href="#">
+                            <a class="nav-link active text-capitalize px-5 text-red-hover active" href="./homepage.html">
                                 <i class="fa-solid fa-house"></i>
                             </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-capitalize px-5 text-red-hover" href="#">media</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-capitalize px-4 text-red-hover" href="#">fun clip</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-capitalize px-5 text-red-hover" href="#">video</a>
-                        </li>
+                        @{
+                            @for (var idx = 0; idx <= 2; idx++)
+                            {
+                                        <li class="nav-item">
+                                            <a class="nav-link text-capitalize px-5 text-red-hover" href="/chuyen-muc/@ViewBag.Menus[idx].PrivateKey">@ViewBag.Menus[idx].Name</a>
+                                        </li>
+
+                            }
+                        }
                     </ul>
                 </div>
                 <div class="col-5 d-flex justify-content-end">
@@ -122,33 +122,16 @@
                         <li class="nav-item">
                             <a class="nav-link active text-uppercase" href="#"><i class="fa-solid fa-house"></i></a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-uppercase" href="#">chuyển động</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-uppercase" href="#">học đường</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-uppercase" href="#">giải trí</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-uppercase" href="#">cẩm nang</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-uppercase" href="#">media</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-uppercase" href="#">ăn-chơi</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-uppercase" href="#">góc ô mai</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-uppercase" href="#">hi-tech</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-uppercase" href="#">thể thao</a>
-                        </li>
+                        @{
+                            @for (var i = 0; i <= 8; i++)
+                            {
+                                        <li class="nav-item">
+                                            <a class="nav-link text-uppercase" href="/chuyen-muc/@ViewBag.Menus[i].PrivateKey">@ViewBag.Menus[i].Name</a>
+                                        </li>
+                            }
+                        }
+
+
                         <li class="nav-item">
                             <a class="nav-link text-uppercase" href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
                         </li>
