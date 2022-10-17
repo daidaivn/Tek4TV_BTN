@@ -27,6 +27,21 @@ namespace Tek4TV_BTN.Controllers
             ViewBag.Look = api.GetObject("24d6f593-f44e-451b-8901-0f250febc495").Result;
             return View();
         }
-        
+        [Route("chuyen-muc/{PrivateKey}")]
+        public IActionResult HomeLevel2(string PrivateKey)
+        {
+            List<dynamic> listData = new List<dynamic>();
+            ViewBag.Menus = api.GetPlaylist("menu_f61fb9fe-d512-44f9-a30a-111c31e71f86").Result;
+            ViewBag.Weather = api.GetObject("weather").Result;
+            ViewBag.Trend = api.GetObjectDev("fe4814ab-dce0-4d74-84e8-3a198f08dee9").Result;
+            ViewBag.Category = api.GetObject(PrivateKey).Result;
+            foreach (var item in ViewBag.Category.Components)
+            {
+                string key = item.PrivateKey;
+                listData.Add(api.GetObject(key).Result);
+            }
+            ViewBag.Data = listData;
+            return View();
+        }
     }
 }
