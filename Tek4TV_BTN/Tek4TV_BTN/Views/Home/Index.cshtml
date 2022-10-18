@@ -136,7 +136,7 @@
                     <a href="#">
                         @foreach (var img in ViewBag.Headline[0].Image)
                         {
-                            if (img.Type == "Thumbnail")
+                            if (img.Type == "lg")
                             {
                                 string url = @img.Url;
                                 string src = url.StartsWith("http") ? url : img.Cdn + img.Url;

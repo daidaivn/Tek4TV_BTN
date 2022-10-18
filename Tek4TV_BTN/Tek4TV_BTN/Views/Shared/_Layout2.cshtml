@@ -50,29 +50,29 @@
     <!-- Link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="/bootstrap5/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../css/home.css">
+    <link rel="stylesheet" href="~/css/funclip.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;700&family=Playfair+Display:ital,wght@0,400;1,700&display=swap" rel="stylesheet">
     <!-- Link Swiper's CSS -->
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
-
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+    
     <!-- Title -->
-    <title>HOME</title>
+    <title>FUNCLIP</title>
 </head>
 <body>
     <!-- header -->
     <header>
-        <div class="bottom-line-nomal">
+        <div class="bottom-line-nomal mb-5">
             <div class="container container-header d-flex px-0">
                 <div class="col-1 d-flex pe-3">
                     <div class="logo">
-                        <h1>
                             <a href="./homepage.html"><img src="../img/TNTPP&NĐ.png" alt=""></a>
-                        </h1>
                     </div>
                 </div>
                 <div class="col-6 d-flex ps-3 ms-3">
@@ -109,8 +109,6 @@
     </header>
     <!-- end header -->
     @RenderBody()
-
-    <!-- Slider home -->
     <footer>
         <div class="backgroud-top position-relative">
             <div class="btn-scroll-top">
@@ -120,18 +118,35 @@
                 <div class="top-footer container">
                     <ul class="navbar-nav-footer d-flex my-0 justify-content-center">
                         <li class="nav-item">
-                            <a class="nav-link active text-uppercase" href="#"><i class="fa-solid fa-house"></i></a>
+                        <a class="nav-link active text-uppercase"href="#"><i class="fa-solid fa-house"></i></a>
                         </li>
-                        @{
-                            @for (var i = 0; i <= 8; i++)
-                            {
-                                <li class="nav-item">
-                                    <a class="nav-link text-uppercase" href="/chuyen-muc/@ViewBag.Menus[i].PrivateKey">@ViewBag.Menus[i].Name</a>
-                                </li>
-                            }
-                        }
-
-
+                        <li class="nav-item">
+                        <a class="nav-link text-uppercase" href="#">chuyển động</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link text-uppercase" href="#">học đường</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link text-uppercase" href="#">giải trí</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link text-uppercase" href="#">cẩm nang</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link text-uppercase" href="#">funclip</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link text-uppercase" href="#">ăn-chơi</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link text-uppercase" href="#">góc ô mai</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase" href="#">hi-tech</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase" href="#">thể thao</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link text-uppercase" href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
                         </li>
@@ -173,11 +188,11 @@
                             <p>
                                 Điện thoại: 024. 38226036</br>
                                 Fax: 024.39431358</br>
-                                HOTLINE: 0905 618 988
+                                HOTLINE: 0905 618 988 
                             </p>
                         </div>
                         <div class="content d-flex">
-                            <i class="pt-1 me-2 fa-solid fa-envelope"></i>
+                                <i class="pt-1 me-2 fa-solid fa-envelope"></i>
                             <p>banbientap@thieunien.vn</p>
                         </div>
                     </div>
@@ -189,7 +204,7 @@
                             <i class="pt-2 me-2 fa-solid fa-location-dot"></i>
                             <div class="box-content">
                                 <p class="text-capitalize my-0">Chu Hải</p>
-                                <p class="my-0">
+                                <p class="my-0"> 
                                     Số 5, Hoà Mã, phường Phạm Đình Hổ, quận Hai Bà Trưng, TP. Hà Nội<br>
                                     Mobile: 0888.725.777
                                 </p>
@@ -203,7 +218,7 @@
                         <div class="content d-flex">
                             <i class="pt-1 me-2 fa-solid fa-envelope"></i>
                             <p>
-                                banbientap@thieunien.vn
+                                banbientap@thieunien.vn 
                             </p>
                         </div>
                     </div>
@@ -225,15 +240,14 @@
                 </div>
             </div>
         </div>
+
     </footer>
-    <!-- end slider home -->
-    @*<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-    <script src="../js/home.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>*@
+    <!--end footer -->
+     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-    <script src="../js/home.js"></script>
+    <script src="~/js/funclip.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.11.6/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.min.js" integrity="sha384-IDwe1+LCz02ROU9k972gdyvl+AESN10+x7tBKgc9I5HFtuNz0wWnPclzo6p9vxnk" crossorigin="anonymous"></script>
+
 </body>
 </html>
