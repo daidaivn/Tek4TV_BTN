@@ -191,9 +191,17 @@
 <!-- main-section-funclip -->
 <div class="main-section-funclip container px-0 d-flex py-3">
     <div class="col-7 pe-4">
-        <video width="100%" height="393px" controls>
-            <source src="movie.mp4" type="video/mp4">
-            <source src="movie.ogg" type="video/ogg">
+        @{
+            var img1 = "";
+            foreach (var item in ViewBag.Video.Media[0].Image)
+                if (item.Type == "lg")
+                {
+                    img1 = (item.Cdn + item.Url);
+                }
+        }
+        <video  id="tek4-player" class="video-js vjs-big-play-centered stylevideo" playsinline muted controls>
+            <source src="@ViewBag.Video.Media[0].Path" type="application/x-mpegURL" />
+          @*<source src="https://media.w3.org/2010/05/sintel/trailer.mp4" type="video/mp4" />*@
         </video>
     </div>
     <div class="col-5 px-4 py-3">
@@ -201,15 +209,15 @@
             <div class="title-funclip mb-3">
                 <h3>
                     <a href="#">
-                        Cách mạng tháng Tám và Quốc khánh 2/9 - Những mốc son lịch sử hào hùng
+                        @ViewBag.Video.Media[0].Title
                     </a>
                 </h3>
             </div>
             <div class="post-date my-3">
-                <p>07/09/2022</p>
+                <p>@ViewBag.Video.Media[0].Schedule</p>
             </div>
             <div class="content-funclip my-3">
-                <p>Ngày 2 tháng 9 năm1945, tại Quảng trường Ba Đình lịch sử, Chủ tịch Hồ Chí Minh đọc bản Tuyên ngôn Độc lập trước quốc dân và thế giới khai sinh ra Nước Việt Nam Dân chủ Cộng hòa (nay là Nước Cộng hòa xã hội chủ nghĩa Việt Nam).</p>
+                <p>@ViewBag.Video.Media[0].Description</p>
             </div>
             <div class="auther my-3">
                 <p>Tác giả: Bùi Hoàng Long</p>
@@ -358,4 +366,74 @@
         </div>
     </div>
 </div>
+<script>
+    jQuery(document).ready(function ($) {
+        $("#nextData").click(function () {
+            document.getElementById("next-category").style.display = "block";
+            document.getElementById("nextData").style.display = "none !important";
+        });
+
+        var path = $("#tek4-player source").attr("src");
+        if (path != null) {
+            var player;
+            var options = {
+                plugins: {
+                    streamrootHls: {
+                        hlsjsConfig: {
+                        },
+                    },
+                    qualityMenu: {
+                        useResolutionLabels: true
+                    }
+                }
+            };
+            player = videojs('tek4-player', options);
+            player.qualityMenu();
+            // player = videojs("tek4-player" );
+            // player.qualityPickerPlugin();
+            var value = "";
+
+            if (value == "" || value == null) {
+                value = path;
+            }
+            // player.poster(img);
+            var autoPlay = false;
+            player.ready(function () {
+
+                player.src({
+                    src: value,
+                    type: value.toLowerCase().endsWith(".mp4") ? 'video/mp4' : 'application/x-mpegURL',
+                });
+
+                this.on('timeupdate', function () {
+                    if (this.currentTime() > 0.4 && this.currentTime() <= 1) {
+                        this.muted(false);
+                        this.volume(0.1);
+                    }
+
+                    if (this.currentTime() <= 1.5 && this.muted() == false) {
+                        var resp = this.play();
+                        if (resp !== undefined) {
+                            resp.then(_ => {
+                                // autoplay starts!
+                            }).catch(error => {
+                                this.muted(true);
+                                this.play();
+                            });
+                        }
+                        this.volume(this.currentTime() * 0.27);
+                    }
+
+                    if (this.currentTime() <= 3) {
+                        this.volume(this.currentTime() * 0.27);
+                    }
+
+                });
+            });
+
+            // $('.vjs-big-play-button').hide()
+        }
+    });
+
+</script>
 <!--end main-section-funclip -->
