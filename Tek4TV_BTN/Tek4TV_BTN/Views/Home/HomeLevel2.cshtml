@@ -2,8 +2,35 @@
     ViewData["Title"] = "HomeLv2";
     Layout = "~/Views/Shared/_Layout2.cshtml";
 }
+<title></title>
 
 <!-- Slider home -->
+<style>
+    .vjs-poster {
+        background-size: 100% 100%;
+    }
+
+    .video-js {
+        height: 100% !important;
+        width: 100% !important;
+    }
+
+    .screen-live {
+        width: 850px !important
+    }
+
+    .vjs-quality-menu-item-sub-label {
+        display: none
+    }
+
+    .video-js.vjs-quality-menu .vjs-quality-menu-button-HD-flag:after {
+        display: none
+    }
+
+    .video-js .vjs-tech {
+        position: initial !important
+    }
+</style>
 <div class="container pb-3 my-3">
     <div class="home-page">
         <div class="slider-block  position-relative d-flex align-items-center flex-column">
@@ -13,96 +40,48 @@
             <section class="full-blee position-relative">
                 <div class="swiper mySwiper">
                     <div class="swiper-wrapper content">
-                        <div class="swiper-slide card">
-                            <div class="card-img aspect-16-9 h-100">
-                                <a href="#">
-                                    <img class="aspect-content boxshadow" src="../img/image 5.png" alt="#">
-                                </a>
+                        @for (var i = 0; i <= 4; i++)
+                        {
+                            <div class="swiper-slide card">
+                                @{
+                                    var slug = "";
+                                }
+                                @foreach (var url in ViewBag.Headline[i].Metadata)
+                                {
+                                    if (url.Name == "Slug")
+                                    {
+                                        slug = url.Value;
+                                    }
+                                }
+                                <div class="card-img aspect-16-9 h-100">
+                                    <a href="~/chi-tiet/@slug">
+                                        @foreach (var img in ViewBag.Headline[i].Image)
+                                        {
+                                            string url = @img.Url;
+                                            string src = url.StartsWith("http") ? url : img.Cdn + img.Url;
+                                            <img class="aspect-content boxshadow" src="@src" alt="#">
+                                        }
+                                    </a>
+                                </div>
+                                <div class="card-category my-2 ">
+                                    @foreach (var url in ViewBag.Headline[i].Metadata)
+                                    {
+                                        if (url.Name == "DVBCategories")
+                                        {
+                                            <p class="text-capitalize mb-0">@url.Value</p>
+                                        }
+                                    }
+                                </div>
+                                <div class="card-heading">
+                                    <h2 class="text-capitalize">
+                                        <a href="~/chi-tiet/@slug">@ViewBag.Headline[i].Title</a>
+                                    </h2>
+                                </div>
+                                <div class="post-time">
+                                    <p class="mb-0">@ViewBag.Headline[i].Schedule</p>
+                                </div>
                             </div>
-                            <div class="card-category my-2 ">
-                                <p class="text-capitalize mb-0">Media</p>
-                            </div>
-                            <div class="card-heading">
-                                <h2 class="text-capitalize">
-                                    <a href="#">ca khuc mo man sea game 20</a>
-                                </h2>
-                            </div>
-                            <div class="post-time">
-                                <p class="mb-0">07/09/2022</p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide card">
-                            <div class="card-img aspect-16-9 h-100">
-                                <a href="#">
-                                    <img class="aspect-content boxshadow" src="../img/image 5.png" alt="#">
-                                </a>
-                            </div>
-                            <div class="card-category my-2 ">
-                                <p class="text-capitalize mb-0">Media</p>
-                            </div>
-                            <div class="card-heading">
-                                <h2 class="text-capitalize">
-                                    <a href="#">Hành trình 10 năm nôí biển ca khuc mo man sea game 20</a>
-                                </h2>
-                            </div>
-                            <div class="post-time">
-                                <p class="mb-0">07/09/2022</p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide card">
-                            <div class="card-img aspect-16-9 h-100">
-                                <a href="#">
-                                    <img class="aspect-content boxshadow" src="../img/image 5.png" alt="#">
-                                </a>
-                            </div>
-                            <div class="card-category my-2 ">
-                                <p class="text-capitalize mb-0">Media</p>
-                            </div>
-                            <div class="card-heading">
-                                <h2 class="text-capitalize">
-                                    <a href="#">Hành trình 10 năm nôí biển ca khuc mo man sea game 20</a>
-                                </h2>
-                            </div>
-                            <div class="post-time">
-                                <p class="mb-0">07/09/2022</p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide card">
-                            <div class="card-img aspect-16-9 h-100">
-                                <a href="#">
-                                    <img class="aspect-content boxshadow" src="../img/image 5.png" alt="#">
-                                </a>
-                            </div>
-                            <div class="card-category my-2 ">
-                                <p class="text-capitalize mb-0">Media</p>
-                            </div>
-                            <div class="card-heading">
-                                <h2 class="text-capitalize">
-                                    <a href="#">Hành trình 10 năm nôí biển ca khuc mo man sea game 20</a>
-                                </h2>
-                            </div>
-                            <div class="post-time">
-                                <p class="mb-0">07/09/2022</p>
-                            </div>
-                        </div>
-                        <div class="swiper-slide card">
-                            <div class="card-img aspect-16-9 h-100">
-                                <a href="#">
-                                    <img class="aspect-content boxshadow" src="../img/image 5.png" alt="#">
-                                </a>
-                            </div>
-                            <div class="card-category my-2 ">
-                                <p class="text-capitalize mb-0">Media</p>
-                            </div>
-                            <div class="card-heading">
-                                <h2 class="text-capitalize">
-                                    <a href="#"> Hành trình 10 năm nôí biển ca khuc mo man sea game 20</a>
-                                </h2>
-                            </div>
-                            <div class="post-time">
-                                <p class="mb-0">07/09/2022</p>
-                            </div>
-                        </div>
+                        }
                     </div>
                 </div>
                 <div class="swiper-button-next"></div>
@@ -116,256 +95,232 @@
 <!-- main-section-funclip -->
 @if (@ViewBag.Category.Media.Count != 0)
 {
-    <div class="main-section-funclip container px-0 d-flex py-3">
-        <div class="col-7 pe-4">
+    var idx = 0;
+    var item = ViewBag.Category.Media[idx];
+    @if (@item.Path != "" && @item.Path != "https://dug0nmhkbevod.vcdn.cloud//")
+    {
 
-            @*<video width="100%" height="393px" controls>
-        <source src="movie.mp4" type="video/mp4">
-        <source src="movie.ogg" type="video/ogg">
-        </video>*@
+        <div class="main-section-funclip container px-0 d-flex py-3">
             @{
-                var slug = "";
+                string src = ""; var slug = "";
             }
-            @foreach (var url in ViewBag.Category.Media[0].Metadata)
+            @foreach (var url in item.Metadata)
             {
                 if (url.Name == "Slug")
                 {
                     slug = url.Value;
                 }
             }
-            @foreach (var img in ViewBag.Category.Media[0].Image)
-            {
-                if (img.Type == "Thumbnail")
+            <div class="col-7 pe-4">
+                
+                @foreach (var img in item.Image)
                 {
-                    <a href="~/chi-tiet/@slug">
-                        @{
-                            string url = @img.Url;
-                            string src = url.StartsWith("http") ? url : img.Cdn + img.Url;
-                        }
-                        <img width="100%" height="393px" src="@src" />
-                    </a>
+                    if (img.Type == "Thumbnail")
+                    {
+                        string url = @img.Url;
+                        src = url.StartsWith("http") ? url : img.Cdn + img.Url;
+                    }
+
                 }
-            }
-        </div>
-        <div class="col-5 px-4 py-3">
-            <div class="box-funclip">
-                <div class="title-funclip mb-3">
-                    <h3>
+
+                <video id="tek4-player_@item.ID" onclick="loadVideo(@item.ID)" class="video-js vjs-big-play-centered stylevideo video-review" muted controls poster="@src">
+                    <source src="@item.Path" type="application/x-mpegURL">
+                </video>
+            </div>
+            <div class="col-5 px-4 py-3">
+                <div class="box-funclip">
+                    <div class="title-funclip mb-3">
+                        <h3>
+                            <a href="href=" ~ /chi-tiet/@slug"">
+                                @item.Title
+                            </a>
+                        </h3>
+                    </div>
+                    <div class="post-date my-3">
+                        <p>07/09/2022</p>
+                    </div>
+                    <div class="content-funclip my-3">
+                        <p>@item.Description.</p>
+                    </div>
+                    <div class="auther my-3">
+                        <p>Tác giả: Bùi Hoàng Long</p>
+                    </div>
+                    <div class="icon-social-networks d-flex align-items-center my-3">
                         <a href="#">
-                            @ViewBag.Category.Media[0].Title
+                            <i class="fa-brands fa-facebook-f mx-1 py-2 icon-fb"></i>
                         </a>
-                    </h3>
-                </div>
-                <div class="post-date my-3">
-                    <p>07/09/2022</p>
-                </div>
-                <div class="content-funclip my-3">
-                    <p>@ViewBag.Category.Media[0].Description.</p>
-                </div>
-                <div class="auther my-3">
-                    <p>Tác giả: Bùi Hoàng Long</p>
-                </div>
-                <div class="icon-social-networks d-flex align-items-center my-3">
-                    <a href="#">
-                        <i class="fa-brands fa-facebook-f mx-1 py-2 icon-fb"></i>
-                    </a>
-                    <a href="#">
-                        <i class="fa-brands fa-twitter mx-1 py-2 icon-twitter"></i>
-                    </a>
-                </div>
-                <div class="tag-funclip mt-3">
-                    <p class="px-3 py-3">Lịch sử</p>
+                        <a href="#">
+                            <i class="fa-brands fa-twitter mx-1 py-2 icon-twitter"></i>
+                        </a>
+                    </div>
+                    <div class="tag-funclip mt-3">
+                        <p class="px-3 py-3">Lịch sử</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+        <!--end main-section-funclip -->
+        <!-- banner style 2 -->
+        <div class="banner-style2 container py-3">
+            <div class="d-flex justify-content-center">
+                <img src="../img/image 16 (2).png" alt="">
+            </div>
+        </div>
+        <!-- end banner-style 2 -->
+    }
 }
-<!--end main-section-funclip -->
-<!-- banner style 2 -->
-<div class="banner-style2 container py-3">
-    <div class="d-flex justify-content-center">
-        <img src="../img/image 16 (2).png" alt="">
-    </div>
-</div>
-<!-- end banner-style 2 -->
+
 <!-- main-section-funclip -->
-<div class="main-section-funclip container px-0 d-flex py-3">
-    <div class="col-7 pe-4">
-        @{
-            var img1 = "";
-            foreach (var item in ViewBag.Video.Media[0].Image)
-                if (item.Type == "lg")
-                {
-                    img1 = (item.Cdn + item.Url);
-                }
+@if (@ViewBag.Category.Media.Count != 0)
+{
+    @for (var idx = 1; idx <= 3; idx++)
+    {
+        var item = ViewBag.Category.Media[idx];
+        @if (@item.Path != "" && @item.Path != "https://dug0nmhkbevod.vcdn.cloud//")
+        {
+            <div class="main-section-funclip container px-0 d-flex py-3">
+                <div class="col-7 pe-4">
+                    @{
+                        string src = ""; var slug = "";
+                    }
+                    @foreach (var url in item.Metadata)
+                    {
+                        if (url.Name == "Slug")
+                        {
+                            slug = url.Value;
+                        }
+                    }
+                    @foreach (var img in item.Image)
+                    {
+                        if (img.Type == "Thumbnail")
+                        {
+                            string url = @img.Url;
+                            src = url.StartsWith("http") ? url : img.Cdn + img.Url;
+                        }
+
+                    }
+
+                    <video id="tek4-player_@item.ID" onclick="loadVideo(@item.ID)" class="video-js vjs-big-play-centered stylevideo video-review" muted controls poster="@src">
+                        <source src="@item.Path" type="application/x-mpegURL">
+                    </video>
+
+                </div>
+                <div class="col-5 px-4 py-3">
+                    <div class="box-funclip">
+                        <div class="title-funclip mb-3">
+                            <h3>
+                                <a href="href=" ~ /chi-tiet/@slug"">
+                                    @item.Title
+                                </a>
+                            </h3>
+                        </div>
+                        <div class="post-date my-3">
+                            <p>07/09/2022</p>
+                        </div>
+                        <div class="content-funclip my-3">
+                            <p>@item.Description.</p>
+                        </div>
+                        <div class="auther my-3">
+                            <p>Tác giả: Bùi Hoàng Long</p>
+                        </div>
+                        <div class="icon-social-networks d-flex align-items-center my-3">
+                            <a href="#">
+                                <i class="fa-brands fa-facebook-f mx-1 py-2 icon-fb"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fa-brands fa-twitter mx-1 py-2 icon-twitter"></i>
+                            </a>
+                        </div>
+                        <div class="tag-funclip mt-3">
+                            <p class="px-3 py-3">Lịch sử</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         }
-        <video  id="tek4-player" class="video-js vjs-big-play-centered stylevideo" playsinline muted controls>
-            <source src="@ViewBag.Video.Media[0].Path" type="application/x-mpegURL" />
-          @*<source src="https://media.w3.org/2010/05/sintel/trailer.mp4" type="video/mp4" />*@
-        </video>
-    </div>
-    <div class="col-5 px-4 py-3">
-        <div class="box-funclip">
-            <div class="title-funclip mb-3">
-                <h3>
-                    <a href="#">
-                        @ViewBag.Video.Media[0].Title
-                    </a>
-                </h3>
-            </div>
-            <div class="post-date my-3">
-                <p>@ViewBag.Video.Media[0].Schedule</p>
-            </div>
-            <div class="content-funclip my-3">
-                <p>@ViewBag.Video.Media[0].Description</p>
-            </div>
-            <div class="auther my-3">
-                <p>Tác giả: Bùi Hoàng Long</p>
-            </div>
-            <div class="icon-social-networks d-flex align-items-center my-3">
-                <a href="#">
-                    <i class="fa-brands fa-facebook-f mx-1 py-2 icon-fb"></i>
-                </a>
-                <a href="#">
-                    <i class="fa-brands fa-twitter mx-1 py-2 icon-twitter"></i>
-                </a>
-            </div>
-            <div class="tag-funclip mt-3">
-                <p class="px-3 py-3">Lịch sử</p>
-            </div>
+    }
+    <!--end main-section-funclip -->
+    <!-- banner style 2 -->
+    <div class="banner-style2 container py-3">
+        <div class="d-flex justify-content-center">
+            <img src="../img/image 16 (2).png" alt="">
         </div>
     </div>
-</div>
-<!--end main-section-funclip -->
+    <!-- end banner-style 2 -->
+}
+
 <!-- main-section-funclip -->
-<div class="main-section-funclip container px-0 d-flex py-3">
-    <div class="col-7 pe-4">
-        <video width="100%" height="393px" controls>
-            <source src="movie.mp4" type="video/mp4">
-            <source src="movie.ogg" type="video/ogg">
-        </video>
-    </div>
-    <div class="col-5 px-4 py-3">
-        <div class="box-funclip">
-            <div class="title-funclip mb-3">
-                <h3>
-                    <a href="#">
-                        Cách mạng tháng Tám và Quốc khánh 2/9 - Những mốc son lịch sử hào hùng
-                    </a>
-                </h3>
+@if (@ViewBag.Category.Media.Count != 0)
+{
+    var loadVideoNew = 20;
+    @for (var idx = 4; idx <= loadVideoNew; idx++)
+    {
+        var item = ViewBag.Category.Media[idx];
+        @if (@item.Path != "" && @item.Path != "https://dug0nmhkbevod.vcdn.cloud//")
+        {
+            <div class="main-section-funclip container px-0 d-flex py-3">
+                <div class="col-7 pe-4">
+                    @{
+                        string src = ""; var slug = "";
+                    }
+                    @foreach (var url in item.Metadata)
+                    {
+                        if (url.Name == "Slug")
+                        {
+                            slug = url.Value;
+                        }
+                    }
+                    @foreach (var img in item.Image)
+                    {
+                        if (img.Type == "Thumbnail")
+                        {
+                            string url = @img.Url;
+                            src = url.StartsWith("http") ? url : img.Cdn + img.Url;
+                        }
+
+                    }
+
+                    <video id="tek4-player_@item.ID" onclick="loadVideo(@item.ID)" class="video-js vjs-big-play-centered stylevideo video-review" muted controls poster="@src">
+                        <source src="@item.Path" type="application/x-mpegURL">
+                    </video>
+
+                </div>
+                <div class="col-5 px-4 py-3">
+                    <div class="box-funclip">
+                        <div class="title-funclip mb-3">
+                            <h3>
+                                <a href="#">
+                                    @item.Title
+                                </a>
+                            </h3>
+                        </div>
+                        <div class="post-date my-3">
+                            <p>07/09/2022</p>
+                        </div>
+                        <div class="content-funclip my-3">
+                            <p>@item.Description.</p>
+                        </div>
+                        <div class="auther my-3">
+                            <p>Tác giả: Bùi Hoàng Long</p>
+                        </div>
+                        <div class="icon-social-networks d-flex align-items-center my-3">
+                            <a href="#">
+                                <i class="fa-brands fa-facebook-f mx-1 py-2 icon-fb"></i>
+                            </a>
+                            <a href="#">
+                                <i class="fa-brands fa-twitter mx-1 py-2 icon-twitter"></i>
+                            </a>
+                        </div>
+                        <div class="tag-funclip mt-3">
+                            <p class="px-3 py-3">Lịch sử</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="post-date my-3">
-                <p>07/09/2022</p>
-            </div>
-            <div class="content-funclip my-3">
-                <p>Ngày 2 tháng 9 năm1945, tại Quảng trường Ba Đình lịch sử, Chủ tịch Hồ Chí Minh đọc bản Tuyên ngôn Độc lập trước quốc dân và thế giới khai sinh ra Nước Việt Nam Dân chủ Cộng hòa (nay là Nước Cộng hòa xã hội chủ nghĩa Việt Nam).</p>
-            </div>
-            <div class="auther my-3">
-                <p>Tác giả: Bùi Hoàng Long</p>
-            </div>
-            <div class="icon-social-networks d-flex align-items-center my-3">
-                <a href="#">
-                    <i class="fa-brands fa-facebook-f mx-1 py-2 icon-fb"></i>
-                </a>
-                <a href="#">
-                    <i class="fa-brands fa-twitter mx-1 py-2 icon-twitter"></i>
-                </a>
-            </div>
-            <div class="tag-funclip mt-3">
-                <p class="px-3 py-3">Lịch sử</p>
-            </div>
-        </div>
-    </div>
-</div>
-<!--end main-section-funclip -->
-<!-- main-section-funclip -->
-<div class="main-section-funclip container px-0 d-flex py-3">
-    <div class="col-7 pe-4">
-        <video width="100%" height="393px" controls>
-            <source src="movie.mp4" type="video/mp4">
-            <source src="movie.ogg" type="video/ogg">
-        </video>
-    </div>
-    <div class="col-5 px-4 py-3">
-        <div class="box-funclip">
-            <div class="title-funclip mb-3">
-                <h3>
-                    <a href="#">
-                        Cách mạng tháng Tám và Quốc khánh 2/9 - Những mốc son lịch sử hào hùng
-                    </a>
-                </h3>
-            </div>
-            <div class="post-date my-3">
-                <p>07/09/2022</p>
-            </div>
-            <div class="content-funclip my-3">
-                <p>Ngày 2 tháng 9 năm1945, tại Quảng trường Ba Đình lịch sử, Chủ tịch Hồ Chí Minh đọc bản Tuyên ngôn Độc lập trước quốc dân và thế giới khai sinh ra Nước Việt Nam Dân chủ Cộng hòa (nay là Nước Cộng hòa xã hội chủ nghĩa Việt Nam).</p>
-            </div>
-            <div class="auther my-3">
-                <p>Tác giả: Bùi Hoàng Long</p>
-            </div>
-            <div class="icon-social-networks d-flex align-items-center my-3">
-                <a href="#">
-                    <i class="fa-brands fa-facebook-f mx-1 py-2 icon-fb"></i>
-                </a>
-                <a href="#">
-                    <i class="fa-brands fa-twitter mx-1 py-2 icon-twitter"></i>
-                </a>
-            </div>
-            <div class="tag-funclip mt-3">
-                <p class="px-3 py-3">Lịch sử</p>
-            </div>
-        </div>
-    </div>
-</div>
-<!--end main-section-funclip -->
-<!-- banner style 2 -->
-<div class="banner-style2 container py-3">
-    <div class="d-flex justify-content-center">
-        <img src="../img/image 16 (2).png" alt="">
-    </div>
-</div>
-<!-- end banner-style 2 -->
-<!-- main-section-funclip -->
-<div class="main-section-funclip container px-0 d-flex py-3">
-    <div class="col-7 pe-4">
-        <video width="100%" height="393px" controls>
-            <source src="movie.mp4" type="video/mp4">
-            <source src="movie.ogg" type="video/ogg">
-        </video>
-    </div>
-    <div class="col-5 px-4 py-3">
-        <div class="box-funclip">
-            <div class="title-funclip mb-3">
-                <h3>
-                    <a href="#">
-                        Cách mạng tháng Tám và Quốc khánh 2/9 - Những mốc son lịch sử hào hùng
-                    </a>
-                </h3>
-            </div>
-            <div class="post-date my-3">
-                <p>07/09/2022</p>
-            </div>
-            <div class="content-funclip my-3">
-                <p>Ngày 2 tháng 9 năm1945, tại Quảng trường Ba Đình lịch sử, Chủ tịch Hồ Chí Minh đọc bản Tuyên ngôn Độc lập trước quốc dân và thế giới khai sinh ra Nước Việt Nam Dân chủ Cộng hòa (nay là Nước Cộng hòa xã hội chủ nghĩa Việt Nam).</p>
-            </div>
-            <div class="auther my-3">
-                <p>Tác giả: Bùi Hoàng Long</p>
-            </div>
-            <div class="icon-social-networks d-flex align-items-center my-3">
-                <a href="#">
-                    <i class="fa-brands fa-facebook-f mx-1 py-2 icon-fb"></i>
-                </a>
-                <a href="#">
-                    <i class="fa-brands fa-twitter mx-1 py-2 icon-twitter"></i>
-                </a>
-            </div>
-            <div class="tag-funclip mt-3">
-                <p class="px-3 py-3">Lịch sử</p>
-            </div>
-        </div>
-    </div>
-</div>
+        }
+
+    }
+}
 <script>
     jQuery(document).ready(function ($) {
         $("#nextData").click(function () {
@@ -373,9 +328,114 @@
             document.getElementById("nextData").style.display = "none !important";
         });
 
-        var path = $("#tek4-player source").attr("src");
+        $(window).scroll(function () {
+            $('.img-click').each(function () {
+                if (isInView(this)) {
+                    this.click(function (event) {
+                        event.preventDefault();
+
+
+                    });
+                }
+            });
+            if ($('.video-review').length > 0) {
+                scrollVideo()
+            }
+
+        });
+
+        function scrollVideo(id) {
+
+            $('.video-review').each(function () {
+                var idplayer = this.id;
+                if (isInView(this)) {
+                    myPlayer = videojs(idplayer);
+                    myPlayer.play();
+                } else {
+
+                    myPlayer = videojs(idplayer);
+                    myPlayer.pause();
+
+                }
+            });
+        }
+
+        function isInView(el) {
+            windowTop = $(window).scrollTop();
+            windowButtom = windowTop + $(window).height();
+            elTop = $(el).offset().top;
+            elButtom = elTop + $(el).height();
+
+            return (elTop >= windowTop && elButtom <= windowButtom);
+        }
+
+
+        //var path = $("#tek4-player_" + i).attr("src");
+        //if (path != null) {
+        //    var player;
+        //    var options = {
+        //        plugins: {
+        //            streamrootHls: {
+        //                hlsjsConfig: {
+        //                },
+        //            },
+        //            qualityMenu: {
+        //                useResolutionLabels: true
+        //            }
+        //        }
+        //    };
+        //    player = videojs('tek4-player', options);
+        //    player.qualityMenu();
+        //    // player = videojs("tek4-player" );
+        //    // player.qualityPickerPlugin();
+        //    var value = "";
+
+        //    if (value == "" || value == null) {
+        //        value = path;
+        //    }
+        //    // player.poster(img);
+        //    var autoPlay = false;
+        //    player.ready(function () {
+
+        //        player.src({
+        //            src: value,
+        //            type: value.toLowerCase().endsWith(".mp4") ? 'video/mp4' : 'application/x-mpegURL',
+        //        });
+
+        //        this.on('timeupdate', function () {
+        //            if (this.currentTime() > 0.4 && this.currentTime() <= 1) {
+        //                this.muted(false);
+        //                this.volume(0.1);
+        //            }
+
+        //            if (this.currentTime() <= 1.5 && this.muted() == false) {
+        //                var resp = this.play();
+        //                if (resp !== undefined) {
+        //                    resp.then(_ => {
+        //                        // autoplay starts!
+        //                    }).catch(error => {
+        //                        this.muted(true);
+        //                        this.play();
+        //                    });
+        //                }
+        //                this.volume(this.currentTime() * 0.27);
+        //            }
+
+        //            if (this.currentTime() <= 3) {
+        //                this.volume(this.currentTime() * 0.27);
+        //            }
+
+        //        });
+        //    });
+
+        //    // $('.vjs-big-play-button').hide()
+        //}
+    });
+    var player;
+
+    function loadVideo(i) {
+        var path = $("#tek4-player_" + i)[0].currentSrc;
         if (path != null) {
-            var player;
             var options = {
                 plugins: {
                     streamrootHls: {
@@ -387,16 +447,13 @@
                     }
                 }
             };
-            player = videojs('tek4-player', options);
+            player = videojs('tek4-player_' + i, options);
             player.qualityMenu();
-            // player = videojs("tek4-player" );
-            // player.qualityPickerPlugin();
             var value = "";
 
             if (value == "" || value == null) {
                 value = path;
             }
-            // player.poster(img);
             var autoPlay = false;
             player.ready(function () {
 
@@ -433,7 +490,6 @@
 
             // $('.vjs-big-play-button').hide()
         }
-    });
-
+    }
 </script>
 <!--end main-section-funclip -->

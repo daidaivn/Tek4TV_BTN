@@ -34,6 +34,7 @@ namespace Tek4TV_BTN.Controllers
             ViewBag.Menus = api.GetPlaylist("menu_f61fb9fe-d512-44f9-a30a-111c31e71f86").Result;
             ViewBag.Weather = api.GetObject("weather").Result;
             ViewBag.Trend = api.GetObjectDev("fe4814ab-dce0-4d74-84e8-3a198f08dee9").Result;
+            ViewBag.Headline = api.GetPlaylist("hightlight").Result;
             ViewBag.Category = api.GetObject(PrivateKey).Result;
             ViewBag.Video = api.GetObject("a55c4ca4-164b-4483-8313-d81d0f22ca70").Result;
             foreach (var item in ViewBag.Category.Components)

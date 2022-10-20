@@ -49,6 +49,17 @@
                     </a>
                 </div>
                 <div>
+
+                    @{
+                        var slug1 = "";
+                    }
+                    @foreach (var url in ViewBag.Headline[1].Metadata)
+                    {
+                        if (url.Name == "Slug")
+                        {
+                            slug1 = url.Value;
+                        }
+                    }
                     <h2 class="text-capitalize my-2 d-inline">
                         <a href="#">
                             @foreach (var url in ViewBag.Headline[1].Metadata)
@@ -308,7 +319,7 @@
                                     </div>
                                     <div class="card-heading">
                                         <h2 class="text-capitalize">
-                                            <a href="#">@ViewBag.Headline[i].Title</a>
+                                            <a href="~/chi-tiet/@slug">@ViewBag.Headline[i].Title</a>
                                         </h2>
                                     </div>
                                     <div class="post-time">
@@ -349,7 +360,7 @@
                     </h2>
                 </div>
                 <div class="contents-right d-flex ms-auto">
-                    <a href="#" class="d-flex">
+                    <a href="/chuyen-muc/@ViewBag.Home[0].PrivateKey" class="d-flex">
                         <p class="text-capitalize my-0 me-2">xem thêm</p>
                         <i class="fa-solid fa-angles-right"></i>
                     </a>
@@ -437,7 +448,7 @@
                     </h2>
                 </div>
                 <div class="contents-right d-flex ms-auto">
-                    <a href="#" class="d-flex">
+                    <a href="/chuyen-muc/@ViewBag.Home[1].PrivateKey" class="d-flex">
                         <p class="text-capitalize my-0 me-2">xem thêm</p>
                         <i class="fa-solid fa-angles-right"></i>
                     </a>
@@ -526,7 +537,7 @@
                     </h2>
                 </div>
                 <div class="contents-right d-flex ms-auto">
-                    <a href="#" class="d-flex">
+                    <a href="/chuyen-muc/@ViewBag.Home[2].PrivateKey" class="d-flex">
                         <p class="text-capitalize my-0 me-2">xem thêm</p>
                         <i class="fa-solid fa-angles-right"></i>
                     </a>

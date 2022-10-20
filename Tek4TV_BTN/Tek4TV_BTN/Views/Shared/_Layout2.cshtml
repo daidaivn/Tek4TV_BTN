@@ -69,7 +69,6 @@
           href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 
     <!-- Title -->
-    <title>FUNCLIP</title>
 </head>
 <body>
     <!-- header -->
@@ -93,7 +92,7 @@
                                         </a>
                                     </li>
                             @{
-                                @for (var idx = 0; idx <= 2; idx++)
+                                @for (var idx = 9; idx <= 11; idx++)
                                 {
                                     <li class="nav-item">
                                         <a class="nav-link text-capitalize px-5 text-red-hover" href="/chuyen-muc/@ViewBag.Menus[idx].PrivateKey">@ViewBag.Menus[idx].Name</a>
@@ -131,34 +130,14 @@
                         <li class="nav-item">
                             <a class="nav-link active text-uppercase" href="#"><i class="fa-solid fa-house"></i></a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-uppercase" href="#">chuyển động</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-uppercase" href="#">học đường</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-uppercase" href="#">giải trí</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-uppercase" href="#">cẩm nang</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-uppercase" href="#">funclip</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-uppercase" href="#">ăn-chơi</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-uppercase" href="#">góc ô mai</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-uppercase" href="#">hi-tech</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-uppercase" href="#">thể thao</a>
-                        </li>
-                        <li class="nav-item">
+                        @{
+                            @for (var i = 2; i <= 11; i++)
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-uppercase" href="/chuyen-muc/@ViewBag.Menus[i].PrivateKey">@ViewBag.Menus[i].Name</a>
+                                </li>
+                            }
+                        }
                             <a class="nav-link text-uppercase" href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
                         </li>
                     </ul>

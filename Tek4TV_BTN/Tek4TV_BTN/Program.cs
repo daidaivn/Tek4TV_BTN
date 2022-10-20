@@ -1,7 +1,12 @@
+using Tek4TV_BTN.Services;
+using Tek4TV_BTN.IServices;
+using Tek4TV_BTN.Services;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IMenuServices, MenuServices>();
 
 var app = builder.Build();
 

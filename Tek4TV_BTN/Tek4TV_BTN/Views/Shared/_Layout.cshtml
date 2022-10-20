@@ -63,7 +63,7 @@
     <link href="~/css/player.css" rel="stylesheet" />
 
     <script src="/lib/jquery/dist/jquery.min.js"></script>
-  
+
     <!-- Link Swiper's CSS -->
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
@@ -91,7 +91,7 @@
                             </a>
                         </li>
                         @{
-                            @for (var idx = 0; idx <= 2; idx++)
+                            @for (var idx = 9; idx <= 11; idx++)
                             {
                                 <li class="nav-item">
                                     <a class="nav-link text-capitalize px-5 text-red-hover" href="/chuyen-muc/@ViewBag.Menus[idx].PrivateKey">@ViewBag.Menus[idx].Name</a>
@@ -131,7 +131,7 @@
                             <a class="nav-link active text-uppercase" href="#"><i class="fa-solid fa-house"></i></a>
                         </li>
                         @{
-                            @for (var i = 0; i <= 8; i++)
+                            @for (var i = 2; i <= 11; i++)
                             {
                                 <li class="nav-item">
                                     <a class="nav-link text-uppercase" href="/chuyen-muc/@ViewBag.Menus[i].PrivateKey">@ViewBag.Menus[i].Name</a>

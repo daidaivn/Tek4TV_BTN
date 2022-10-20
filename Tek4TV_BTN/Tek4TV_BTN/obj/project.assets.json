@@ -9427,19 +9427,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {}
+    "C:\\Users\\dongh\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\TEK4TV\\Projects\\Tek4TV_BTN\\Tek4TV_BTN\\Tek4TV_BTN\\Tek4TV_BTN.csproj",
+      "projectUniqueName": "C:\\Users\\dongh\\OneDrive\\Máy tính\\New folder (3)\\Tek4TV_BTN\\Tek4TV_BTN\\Tek4TV_BTN\\Tek4TV_BTN.csproj",
       "projectName": "Tek4TV_BTN",
-      "projectPath": "C:\\TEK4TV\\Projects\\Tek4TV_BTN\\Tek4TV_BTN\\Tek4TV_BTN\\Tek4TV_BTN.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\TEK4TV\\Projects\\Tek4TV_BTN\\Tek4TV_BTN\\Tek4TV_BTN\\obj\\",
+      "projectPath": "C:\\Users\\dongh\\OneDrive\\Máy tính\\New folder (3)\\Tek4TV_BTN\\Tek4TV_BTN\\Tek4TV_BTN\\Tek4TV_BTN.csproj",
+      "packagesPath": "C:\\Users\\dongh\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\dongh\\OneDrive\\Máy tính\\New folder (3)\\Tek4TV_BTN\\Tek4TV_BTN\\Tek4TV_BTN\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\dongh\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
