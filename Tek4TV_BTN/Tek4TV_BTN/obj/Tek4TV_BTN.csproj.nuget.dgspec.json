@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dongh\\OneDrive\\Máy tính\\New folder (3)\\Tek4TV_BTN\\Tek4TV_BTN\\Tek4TV_BTN\\Tek4TV_BTN.csproj": {}
+    "C:\\Tek4TV\\Tek4TV_BTN\\Tek4TV_BTN\\Tek4TV_BTN\\Tek4TV_BTN\\Tek4TV_BTN.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dongh\\OneDrive\\Máy tính\\New folder (3)\\Tek4TV_BTN\\Tek4TV_BTN\\Tek4TV_BTN\\Tek4TV_BTN.csproj": {
+    "C:\\Tek4TV\\Tek4TV_BTN\\Tek4TV_BTN\\Tek4TV_BTN\\Tek4TV_BTN\\Tek4TV_BTN.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dongh\\OneDrive\\Máy tính\\New folder (3)\\Tek4TV_BTN\\Tek4TV_BTN\\Tek4TV_BTN\\Tek4TV_BTN.csproj",
+        "projectUniqueName": "C:\\Tek4TV\\Tek4TV_BTN\\Tek4TV_BTN\\Tek4TV_BTN\\Tek4TV_BTN\\Tek4TV_BTN.csproj",
         "projectName": "Tek4TV_BTN",
-        "projectPath": "C:\\Users\\dongh\\OneDrive\\Máy tính\\New folder (3)\\Tek4TV_BTN\\Tek4TV_BTN\\Tek4TV_BTN\\Tek4TV_BTN.csproj",
+        "projectPath": "C:\\Tek4TV\\Tek4TV_BTN\\Tek4TV_BTN\\Tek4TV_BTN\\Tek4TV_BTN\\Tek4TV_BTN.csproj",
         "packagesPath": "C:\\Users\\dongh\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dongh\\OneDrive\\Máy tính\\New folder (3)\\Tek4TV_BTN\\Tek4TV_BTN\\Tek4TV_BTN\\obj\\",
+        "outputPath": "C:\\Tek4TV\\Tek4TV_BTN\\Tek4TV_BTN\\Tek4TV_BTN\\Tek4TV_BTN\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\dongh\\AppData\\Roaming\\NuGet\\NuGet.Config",

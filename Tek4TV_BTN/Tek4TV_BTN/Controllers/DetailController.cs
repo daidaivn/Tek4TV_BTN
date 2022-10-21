@@ -8,11 +8,11 @@ using Tek4TV_BTN.IServices;
 
 namespace Tek4TV_BTN.Controllers
 {
-    public class DetailControllers : Controller
+    public class DetailController : Controller
     {
         HomeApi api = new HomeApi();
 
-        public DetailControllers(IMenuServices menu)
+        public DetailController(IMenuServices menu)
         {
         }
 

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HxiYvMr0/1B0oZyxKg/UwCQmMH/mj25mI5g3BuU29eMDeNSlAgdFvTmXsfWN21LG/jL/yhQUdiyI61CN/WLttw==",
+  "dgSpecHash": "p2uNmStL2YXVGrF+9OvFmihsRnvpfprK69WGiGxbRZvm/UVFIN4KZL9TbPrn9jeZpOjCm/UVtwy7oQfLs2wmlg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\dongh\\OneDrive\\Máy tính\\New folder (3)\\Tek4TV_BTN\\Tek4TV_BTN\\Tek4TV_BTN\\Tek4TV_BTN.csproj",
+  "projectFilePath": "C:\\Tek4TV\\Tek4TV_BTN\\Tek4TV_BTN\\Tek4TV_BTN\\Tek4TV_BTN\\Tek4TV_BTN.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\dongh\\.nuget\\packages\\humanizer.core\\2.2.0\\humanizer.core.2.2.0.nupkg.sha512",
     "C:\\Users\\dongh\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",

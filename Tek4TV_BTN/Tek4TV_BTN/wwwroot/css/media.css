@@ -144,7 +144,7 @@ a{
 .container-header{
     height: 72px;
 }
-.container-header>.col-1>.logo>a>img{
+.container-header>.col-1>.logo>div>a>img{
     height: 100%;
     width: 100%;
 }
@@ -172,25 +172,28 @@ a{
     align-items: center;
     display: flex;
 }
-.container-header>.col-5>.icon-user{
+.container-header>.col-5>a>.icon-user{
     align-items: center;
     display: flex;
 }
-.container-header>.col-5>.text-capitalize{
+.container-header>.col-5>a>.text-capitalize{
     font-size: 18px;
     font-family: var(---Barlow--semi);
     font-weight: 700;
     color: var(--title-black);
     display: flex;
     align-items: center;
+    margin: 0 !important;
 }
-.container-header>.col-5>.text-capitalize>a{
+.container-header>.col-5>a{
+    display: flex;
+    align-items: center;
+}
+.container-header>.col-5>a>p{
     font-size: 18px;
     font-family: var(---Barlow--semi);
     font-weight: 700;
     color: var(--title-black);
-    display: flex;
-    align-items: center;
 }
 .container-header>.col-5>.search>input{
     background-color: #D9D9D9;
@@ -208,9 +211,10 @@ a{
 /* Slider home */
 .home-page .full-blee{
     background-color: var(--bg-brown);
-    padding:3em 0;
+    padding:3em ;
     box-shadow: 0 0 0 100vh var(--bg-brown);
     clip-path: inset(0 -100vmax);
+    width: 100%;
 }
 .home-page>.slider-block>.slider-heading {
     background-image: url(../img/brush\ 2.png);
@@ -261,18 +265,10 @@ a{
     line-height: 1.4rem;
 }
 .swiper{
-    width: 1300px;
+    width: 100%;
 }
 .swiper-button-prev:after, .swiper-button-next:after{
     color: #C4C4C4;
-}
-.swiper-button-prev:after{
-    position: absolute;
-    left: -300%;
-}
-.swiper-button-next:after{
-    position: absolute;
-    right: -300%;
 }
 .home-page>.slider-block .card>.post-time p{
     font-family: var(--Barlow--semi);
@@ -302,13 +298,13 @@ a{
     font-size: 14px;
     color: #BABABA;
 }
-.main-section-media>.col-5>.box-media>.auther{
+.main-section-media>.col-5>.box-media>.related-info>.auther{
     font-weight: 500;
     font-family: var(--Barlow--semi);
     font-size: 14px;
     color: #BABABA;
 }
-.main-section-media>.col-5>.box-media>.icon-social-networks>a>i{
+.main-section-media>.col-5>.box-media>.related-info>.icon-social-networks>a>i{
     border-radius: 100%;
     border: 1px solid #CECECE;
     width: 30px;
